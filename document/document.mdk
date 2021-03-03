@@ -9,7 +9,16 @@ Logo          : True
 ## b
 
 By contradiction, fix some minimum support $s$ and a frequent itemset $S$ s.t. some nonempty subset $T \subseteq S$
-has lower support than $s$.
+has lower support than that of $S$. WLOG $|T| = |S| - 1$, or else consider any subset of $S$ and superset of $T$ that differs from $S$ by
+cardinality of 1; call it $S'$. If support of $S'$ satisfies $sup(S') < sup(S)$, then $S' \subset S$ are the
+two sets we want for our assumption. Otherwise we have $sup(T) < sup(S) \leq sup(S')$, and we can recurse on
+this process until we obtain a $|S'| - 1 = |T|$ which satisfies our assumption. Thus $|T| = |S| - 1$, and let
+$e$ be s.t. $T \cup \{e\} = S$. Let the itemsets be called $I$, for each $I_i$,
+$S \subseteq I_i \implies (T \cup \{e\}) \subseteq I_i \implies T \subseteq I_i \land \{e\} \subseteq I_i$, which
+implies that any itemset in which $S$ occurs also must have $T$ occuring, which implies that the support of
+$T$ is at least the support of $S$.
+
+
 
 
 
