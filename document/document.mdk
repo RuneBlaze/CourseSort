@@ -4,15 +4,13 @@ Logo          : True
 
 [TITLE]
 
-# Madoko 
+# Problem 1
 
-Madoko is a fast markdown processor for writing professional articles
-with a focus on simplicity and plain text readability.
+## b
 
-* Read the [reference manual].
-* Explore the upper-right toolbox menu to discover how Markdown works. 
-* `Alt-Q` reformats the current paragraph.
+By contradiction, fix some minimum support $s$ and a frequent itemset $S$ s.t. some nonempty subset $T \subseteq S$
+has lower support than $s$.
 
-Enjoy!
+
 
 [reference manual]: http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html  "Madoko reference manual"
