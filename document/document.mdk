@@ -19,7 +19,13 @@ implies that any itemset in which $S$ occurs also must have $T$ occuring, which 
 $T$ is at least the support of $S$.
 
 
+# Problem 5
 
+## a
+
+## b
+
+http://pages.cs.wisc.edu/~matthewb/pages/notes/pdf/svms/RBFKernel.pdf
 
 
 [reference manual]: http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html  "Madoko reference manual"
