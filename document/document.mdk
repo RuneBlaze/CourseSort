@@ -22,9 +22,16 @@ this process until we obtain a $|S'| - 1 = |T|$ which satisfies our assumption. 
 $e$ be s.t. $T \cup \{e\} = S$. Let the itemsets be called $I$, for each $I_i$,
 $S \subseteq I_i \implies (T \cup \{e\}) \subseteq I_i \implies T \subseteq I_i \land \{e\} \subseteq I_i$, which
 implies that any itemset in which $S$ occurs also must have $T$ occuring, which implies that the support of
-$T$ is at least the support of $S$.
+$T$ is at least the support of $S$. This proves (2).
+
+For (1), by contradiction suppose that some non-empty subset of a frequent itemset is not frequent. Then
+by definition this contracts (2).
 
 ## c
+
+They are not null-invariant. Consider when evaluating the Lift of A -> B, and we fix all the
+non-null events (i.e. A or B occurs), but vary the # of null events (neither A or B occurs); then
+these two measures change -- this might not be desirable for some settings.
 
 
 ![](https://3.bp.blogspot.com/-0Xec064LuNE/VPZnPzq6s6I/AAAAAAAAB4s/fCGgdTejutU/s1600/AB%2BVenn%2BDiagram.jpg)
@@ -101,6 +108,9 @@ m
 
 ## b
 
+![IMG_F95DB66796B4-1]
+
+[IMG_F95DB66796B4-1]: images/IMG_F95DB66796B4-1.JPEG "IMG_F95DB66796B4-1" { width:auto; max-width:90% }
 
 ## c
 
@@ -138,7 +148,6 @@ Top-10:
  (frozenset({'sausage'}), 924)]
 ```
 
-## c
 |             | tropical fruit | not tropical fruit |      |
 |-------------|----------------|--------------------|------|
 | sausage     | 137            | 895                | 1032 |
@@ -146,13 +155,41 @@ Top-10:
 |             | 924            | 8911               |      |
 
 `lift(tropical fruit -> sausage)` = 1.4130035823349778
+
+## c
+```
+Itemset size => running time
+1000 => fp-growth: 0.018999699999767472, apriori: 0.10236879999865778
+2000 => fp-growth: 0.0456969000006211, apriori: 0.23432859999957145
+3000 => fp-growth: 0.10826420000012149, apriori: 0.3962135000001581
+4000 => fp-growth: 0.16897269999935816, apriori: 0.5983805999985634
+5000 => fp-growth: 0.26302639999994426, apriori: 0.970965200000137
+```
+
+It can be seen that apriori is obviuosly less scalable compared to fp-growth.
+It looks like exponential time already even with such small datasets while
+fp-growth clearly scales better.
+
+
 # Problem 5
 
 ## a
 
+See (b). By closure properties of valid kernels, if two kernels are semi-definite
+and summed (taken the product) together, then their sum/product is also semi-definite, i.e. eigenvalues
+non-negative. Thus is RBF kernel is the sum of infinite number of polynomial
+kernels
+
 ## b
 
-http://pages.cs.wisc.edu/~matthewb/pages/notes/pdf/svms/RBFKernel.pdf
+WLOG, we assume the gamma variable to be 0.5.
+
+## c
+
+## d
+
+This SVM would be just like nearest neighbor classifier.
+
 
 # Problem 6
 
