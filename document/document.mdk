@@ -189,10 +189,44 @@ The accuracy achived is 100%. 21 features are selected.
 
 See code for implementation.
 
+Classification results (by row):
+
+```
+[0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 1 0 1 0 0 1 1 1 1 0 0 0 1 0 0 0 0 1 1 0 1
+ 1 1 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 1 1 0 0 1 0 0 0 1 1 0 1 0 0 0
+ 0 0 0 1 0 1 1 0 1 0 0 1 1 1 0 0 0 1 0 1 1 0 1 0 1 1 1 1 0 1 1 0 1 0 0 1 0
+ 0 1 0 1 0]
+```
+
+Accuracy is 0.98.
+
 # Problem 8
 
 ## a
 
+From the formula, RWR, compared to the other (single path, shortest path, etc.),
+will simutaneously "consider" all of the possibilities going from a starting node
+while taking the weights into account at each iteration. Looking at the iteration
+formula more closely ($r_{i}=c A r_{i}+(1-c) e_{i}$), we see that the matrix $A$, will do multiple
+"choices" by its matrix multiplication. The restart probability also ensures that stochastically
+the node will be reset and thus gives more consideration to all the proximity nodes around the starting condition.
+
+
+
 ## b
+
+The top ten indices (along with the weights associated with each node):
+```
+[(420, 0.00319884364887129),
+ (5, 0.0024865987565811706),
+ (160, 0.0024104627178654914),
+ (86, 0.002384791146662446),
+ (301, 0.0021187365469630304),
+ (121, 0.002075908392562482),
+ (42, 0.002047447746306882),
+ (411, 0.001995249380766448),
+ (82, 0.0019756997652009126),
+ (932, 0.0019446438319270262)]
+```
 
 [reference manual]: http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html  "Madoko reference manual"
