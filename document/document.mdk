@@ -1,5 +1,5 @@
-Title         : Welcome
-Author        : You
+Title         : HW1 Data Mining
+Author        : Baqiao Liu
 Logo          : True
 
 [TITLE]
@@ -8,7 +8,9 @@ Logo          : True
 
 ## a
 
-
+FP-Growth's running time scales linearly w.r.t. the number of itemsets, while Apriori scales exponentially.
+FP-Growth has no explicit candidate generation, while Apriori explicitly constructs candidates by using
+the frequent itemsets of the previous scan and checking if they overlap but by one item.
 
 ## b
 
@@ -25,6 +27,12 @@ $T$ is at least the support of $S$.
 ## c
 
 
+![](https://3.bp.blogspot.com/-0Xec064LuNE/VPZnPzq6s6I/AAAAAAAAB4s/fCGgdTejutU/s1600/AB%2BVenn%2BDiagram.jpg)
+<!-- end merge -->
+
+The Jacaard measure uses only the cardinality of the sets in the non-gray region. The
+measure is invariant of the size of the gray region (the region containig the null records):
+it is null-invariant.
 
 ## d
 
@@ -105,13 +113,39 @@ O -> F
 # Problem 3
 
 ## a
+ - product types: 169
+ - total transactions: 9835
+ - average product per transaction: 11.05
+ - 5 most popular product: whole milk, other vegetables, rolls/buns, soda, yogurt
+ - 5 least popular product: baby food, sound storage medium, preservation products, bags, kitchen utensil
 
 ## b
 
+`min_support` was set to 500.
+
+Top-10:
+
+```
+[(frozenset({'whole milk'}), 2513),
+ (frozenset({'other vegetables'}), 1903),
+ (frozenset({'rolls/buns'}), 1809),
+ (frozenset({'soda'}), 1715),
+ (frozenset({'yogurt'}), 1372),
+ (frozenset({'bottled water'}), 1087),
+ (frozenset({'root vegetables'}), 1072),
+ (frozenset({'tropical fruit'}), 1032),
+ (frozenset({'shopping bags'}), 969),
+ (frozenset({'sausage'}), 924)]
+```
 
 ## c
+|             | tropical fruit | not tropical fruit |      |
+|-------------|----------------|--------------------|------|
+| sausage     | 137            | 895                | 1032 |
+| not sausage | 787            | 8016               | 8803 |
+|             | 924            | 8911               |      |
 
-
+`lift(tropical fruit -> sausage)` = 1.4130035823349778
 # Problem 5
 
 ## a
@@ -122,8 +156,43 @@ http://pages.cs.wisc.edu/~matthewb/pages/notes/pdf/svms/RBFKernel.pdf
 
 # Problem 6
 
+## a
+
+Classification results (by row):
+
+```
+[0 1 1 0 0 0 0 0 0 1 0 0 1 0 0 0 1 0 1 0 1 1 1 1 1 1 0 0 1 1 0 0 0 1 1 0 1
+ 1 1 0 1 1 1 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 1 1 1 1 0 1 0 0 0 1 1 0 1 1 0 0
+ 1 0 0 1 0 1 1 0 1 0 0 1 1 1 0 0 0 0 0 1 1 0 1 0 1 1 1 1 0 1 1 0 1 0 0 1 0
+ 0 1 0 1 0]
+```
+
+The accuracy achived is 0.94.
+
+
+## b
+
+Classification results (by row):
+
+```
+[0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1,
+       1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0,
+       0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1,
+       0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1,
+       0, 0, 1, 0, 1, 0]
+```
+
+The accuracy achived is 100%. 21 features are selected.
+
 # Problem 7
 
+See code for implementation.
+
 # Problem 8
+
+## a
+
+## b
 
 [reference manual]: http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html  "Madoko reference manual"
