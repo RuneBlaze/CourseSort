@@ -6,6 +6,10 @@ Logo          : True
 
 # Problem 1
 
+## a
+
+
+
 ## b
 
 By contradiction, fix some minimum support $s$ and a frequent itemset $S$ s.t. some nonempty subset $T \subseteq S$
@@ -17,6 +21,86 @@ $e$ be s.t. $T \cup \{e\} = S$. Let the itemsets be called $I$, for each $I_i$,
 $S \subseteq I_i \implies (T \cup \{e\}) \subseteq I_i \implies T \subseteq I_i \land \{e\} \subseteq I_i$, which
 implies that any itemset in which $S$ occurs also must have $T$ occuring, which implies that the support of
 $T$ is at least the support of $S$.
+
+## c
+
+
+
+## d
+
+# Problem 2
+
+## a
+
+```
+Scan 1
+b 3 => ✓ keep
+a 4 => ✓ keep
+o 1 => ✘ not frequent enough
+l 2 => ✘ not frequent enough
+p 3 => ✓ keep
+m 3 => ✓ keep
+f 4 => ✓ keep
+d 2 => ✘ not frequent enough
+h 2 => ✘ not frequent enough
+g 1 => ✘ not frequent enough
+c 5 => ✓ keep
+Scan 2
+p, c 3 => ✓ keep
+c, f 3 => ✓ keep
+b, f 1 => ✘ not frequent enough
+p, b 1 => ✘ not frequent enough
+p, f 2 => ✘ not frequent enough
+p, m 2 => ✘ not frequent enough
+f, m 2 => ✘ not frequent enough
+c, a 4 => ✓ keep
+c, m 3 => ✓ keep
+b, m 1 => ✘ not frequent enough
+b, a 2 => ✘ not frequent enough
+f, a 2 => ✘ not frequent enough
+b, c 2 => ✘ not frequent enough
+p, a 3 => ✓ keep
+a, m 3 => ✓ keep
+Scan 3
+a, c, f 2 => ✘ not frequent enough
+a, p, c 3 => ✓ keep
+p, c, m 2 => ✘ not frequent enough
+c, f, m 2 => ✘ not frequent enough
+f, p, c 2 => ✘ not frequent enough
+c, a, m 3 => ✓ keep
+p, a, m 2 => ✘ not frequent enough
+```
+
+Final derived frequent itemsets:
+
+```
+c
+a
+c, a
+f
+c, f
+p, c
+b
+a, p, c
+p, a
+c, m
+p
+a, m
+c, a, m
+m
+```
+
+
+## b
+
+
+## c
+
+```
+A -> C
+O -> L
+O -> F
+```
 
 
 # Problem 5
